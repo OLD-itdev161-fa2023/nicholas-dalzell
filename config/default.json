@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://nick-dalzell:Koney2022@cluster0.ubdwd.mongodb.net/?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://nick-dalzell:Koney2022@cluster0.ubdwd.mongodb.net/?retryWrites=true&w=majority",
+    "jwtSecret": "wouldyouliketoknowmore"
 }
