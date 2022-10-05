@@ -5,7 +5,7 @@ import config from 'config';
 const db = config.get('mongoURI');
 
 //connect to mongoDB
-const connectDataBase = async () => {
+const connectDatabase = async () => {
     try {
         await mongoose.connect(db, {
             useUnifiedTopology: true
