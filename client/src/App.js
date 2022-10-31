@@ -74,12 +74,12 @@ class App extends React.Component {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/Register">Register</Link>
+                  <Link to="/register">Register</Link>
                 </li>
                 <li>
                   {user ?
                     <Link to="" onClick={this.logOut}>Log Out</Link> :
-                    <Link to="/Login">Login</Link>
+                    <Link to="/login">Login</Link>
                   }
                   
                 </li>

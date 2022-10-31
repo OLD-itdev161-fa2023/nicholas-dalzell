@@ -108,11 +108,11 @@ app.get('/api/auth', auth, async (req, res) => {
 });
 
 /**
- * @route POST api/Login
+ * @route POST api/login
  * @desc Login user
  */
 app.post(
-    '/api/Login',
+    '/api/login',
     [
         check('email', 'Please enter a valid email').isEmail(),
         check('password', 'A Password is required').exists()
