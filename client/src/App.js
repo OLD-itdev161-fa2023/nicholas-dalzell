@@ -99,10 +99,10 @@ class App extends React.Component {
             </Route>
             <Switch>
               <Route 
-                exact path="/Register" 
+                exact path="/register" 
                 render={() => <Register {...authProps} />} />
               <Route 
-                exact path="/Login" 
+                exact path="/login" 
                 render={() => <Login {...authProps} />} />
             </Switch>
           </main>        
