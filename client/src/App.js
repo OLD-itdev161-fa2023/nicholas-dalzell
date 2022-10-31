@@ -74,12 +74,12 @@ class App extends React.Component {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/register">Register</Link>
+                  <Link to="/Register">Register</Link>
                 </li>
                 <li>
                   {user ?
                     <Link to="" onClick={this.logOut}>Log Out</Link> :
-                    <Link to="/login">Login</Link>
+                    <Link to="/Login">Login</Link>
                   }
                   
                 </li>
@@ -99,10 +99,10 @@ class App extends React.Component {
             </Route>
             <Switch>
               <Route 
-                exact path="/register" 
+                exact path="/Register" 
                 render={() => <Register {...authProps} />} />
               <Route 
-                exact path="/login" 
+                exact path="/Login" 
                 render={() => <Login {...authProps} />} />
             </Switch>
           </main>        

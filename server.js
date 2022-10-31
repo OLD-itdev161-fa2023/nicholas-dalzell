@@ -108,7 +108,7 @@ app.get('/api/auth', auth, async (req, res) => {
 });
 
 /**
- * @route POST api/login
+ * @route POST api/Login
  * @desc Login user
  */
 app.post(
