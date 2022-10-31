@@ -72,7 +72,21 @@ app.post(
                 await user.save();
 
                 //generate and return a jwt token
-                returnToken(user, res);              
+                const payload = {
+                    user: {
+                        id: user.id
+                    }
+                };
+
+                jwt.sign(
+                    payload,
+                    config.get('jwtSecret'),
+                    { expiresIn: '10hr'},
+                    (err, token) => {
+                        if(err) throw err;
+                        res.json({ token: token});
+                    }
+                );                
             } catch (error) {
                 res.status(500).send('Server error');
             }
@@ -98,7 +112,7 @@ app.get('/api/auth', auth, async (req, res) => {
  * @desc Login user
  */
 app.post(
-    '/api/Login',
+    '/api/login',
     [
         check('email', 'Please enter a valid email').isEmail(),
         check('password', 'A Password is required').exists()
@@ -144,16 +158,15 @@ const returnToken = (user, res) => {
 
     jwt.sign(
         payload,
-        config.get(jwtSecret),
-        {
-            expiresIn: '10hr'
-        },
+        config.get('jwtSecret'),
+        { expiresIn: '10hr'},
         (err, token) => {
             if(err) throw err;
-            res.json({token:token});
+            res.json({ token: token});
         }
-    );
+    );      
 };
+
 
 //connection listener
 const port = 5000;
